@@ -43,4 +43,4 @@ Add following line of code to your module(app) level gradle file
 </com.robertlevonyan.views.expandable.Expandable>
 ```
 
-|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/collapsed.png)|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expanded.png)|
+|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/collapsed.jpg)|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expanded.jpg)|
