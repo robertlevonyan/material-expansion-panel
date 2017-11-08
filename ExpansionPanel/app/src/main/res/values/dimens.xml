@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="collapsed_size">48dp</dimen>
+    <dimen name="collapsed_icon_size">32dp</dimen>
+    <dimen name="expanded_icon_size">40dp</dimen>
+    <dimen name="icon_margin">8dp</dimen>
+    <dimen name="default_corner_radius">4dp</dimen>
+    <dimen name="expand_drawable_size">24dp</dimen>
+</resources>

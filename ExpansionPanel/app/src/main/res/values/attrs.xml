@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Expandable">
+        <attr name="exp_icon" format="integer" />
+        <attr name="exp_iconStyle" format="enum">
+            <enum name="square" value="0" />
+            <enum name="circle" value="1" />
+            <enum name="roundedSquare" value="2" />
+        </attr>
+        <attr name="exp_animateExpand" format="boolean" />
+        <attr name="exp_backgroundColor" format="color" />
+        <attr name="exp_headerBackgroundColor" format="color" />
+        <attr name="exp_cornerRadius" format="dimension" />
+        <attr name="exp_expandIndicator" format="integer" />
+    </declare-styleable>
+</resources>
