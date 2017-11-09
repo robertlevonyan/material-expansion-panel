@@ -44,3 +44,4 @@ Add following line of code to your module(app) level gradle file
 ```
 
 |![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/collapsed.jpg)|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expanded.jpg)|
+|----------------------------------------------------------------------------------------------|-----------|
