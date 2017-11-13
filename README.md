@@ -11,7 +11,7 @@ Expansion panels contain creation flows and allow lightweight editing of an elem
 Add following line of code to your module(app) level gradle file
 
 ```java
-    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:1.0.8'
+    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:1.1.0'
 ```
 
 #### Maven:
@@ -20,7 +20,7 @@ Add following line of code to your module(app) level gradle file
 <dependency>
   <groupId>com.robertlevonyan.view</groupId>
   <artifactId>MaterialExpansionPanel</artifactId>
-  <version>1.0.8</version>
+  <version>1.1.0</version>
   <type>pom</type>
 </dependency>
 ```
