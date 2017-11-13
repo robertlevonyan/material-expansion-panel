@@ -49,3 +49,14 @@ Add following line of code to your module(app) level gradle file
 Material Expansion Panel in action
 
 ![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/process.gif)
+
+### Attributes
+
+|Custom Atributes                |Description                                               |
+|--------------------------------|----------------------------------------------------------|
+|`app:exp_icon`                  |Icon for Expandable Header                                |
+|`app:exp_iconStyle`             |Set style for header icon: square, circle or roundedSquare|
+|`app:exp_animateExpand`         |Animate expand of layout                                  |
+|`app:exp_backgroundColor`       |Set a custom background color for layout                  |
+|`app:exp_headerBackgroundColor` |Set a custom background color for layout header           |
+|`app:exp_expandIndicator`       |Select custom drawable for expand indicator               |
