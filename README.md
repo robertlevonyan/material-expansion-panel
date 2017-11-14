@@ -11,7 +11,7 @@ Expansion panels contain creation flows and allow lightweight editing of an elem
 Add following line of code to your module(app) level gradle file
 
 ```java
-    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:1.1.0'
+    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:1.2.0'
 ```
 
 #### Maven:
@@ -20,7 +20,7 @@ Add following line of code to your module(app) level gradle file
 <dependency>
   <groupId>com.robertlevonyan.view</groupId>
   <artifactId>MaterialExpansionPanel</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -94,7 +94,26 @@ Set expand listener
     expandable.setExpandIndicator(); // Select custom drawable resource for expand indicator
 ```
 
+### Usage in RecyclerView
+
+Inside onBindViewHolder() add this after getting the instance of Expandable
+```java
+    expandable.requestLayout();
+```
+
+Add code below to your Adapter class
+```java
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+```
+
 ## Versions
+
+#### 1.2.0
+
+RecyclerView issue fixed
 
 #### 1.1.0
 
