@@ -1,16 +1,20 @@
 package com.robertlevonyan.views.expandable;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -29,7 +33,6 @@ public class Expandable extends FrameLayout {
     private boolean animateExpand;
     private int backgroundColor;
     private int headerBackgroundColor;
-    private float cornerRadius;
     private Drawable expandIndicator;
 
     private FrameLayout bgCard;
@@ -44,6 +47,9 @@ public class Expandable extends FrameLayout {
     private View expandableView;
     private LayoutParams expandableViewParams;
 
+    private ExpandingListener expandingListener;
+    private boolean isCreated;
+
     public Expandable(Context context) {
         this(context, null, 0);
     }
@@ -57,7 +63,6 @@ public class Expandable extends FrameLayout {
 
         initAttrs(attrs);
         initView();
-        initExpandableClick();
     }
 
     private void initAttrs(AttributeSet attrs) {
@@ -70,7 +75,6 @@ public class Expandable extends FrameLayout {
         animateExpand = ta.getBoolean(R.styleable.Expandable_exp_animateExpand, false);
         backgroundColor = ta.getColor(R.styleable.Expandable_exp_backgroundColor, ContextCompat.getColor(getContext(), R.color.colorDefaultBackground));
         headerBackgroundColor = ta.getColor(R.styleable.Expandable_exp_headerBackgroundColor, ContextCompat.getColor(getContext(), R.color.colorDefaultBackground));
-        cornerRadius = ta.getDimension(R.styleable.Expandable_exp_cornerRadius, getContext().getResources().getDimension(R.dimen.default_corner_radius));
         expandIndicator = ta.getDrawable(R.styleable.Expandable_exp_expandIndicator);
 
         ta.recycle();
@@ -79,7 +83,19 @@ public class Expandable extends FrameLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        buildView();
+        if (!isCreated) {
+            buildView();
+            isCreated = true;
+        }
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        if (!isCreated) {
+            buildView();
+            isCreated = true;
+        }
     }
 
     private void buildView() {
@@ -110,6 +126,7 @@ public class Expandable extends FrameLayout {
 
         bgCard.addView(expandableView);
         buildHeader();
+        initExpandableClick();
     }
 
     @Override
@@ -235,7 +252,7 @@ public class Expandable extends FrameLayout {
     }
 
     private void initExpandableClick() {
-        setOnClickListener(new OnClickListener() {
+        bgCard.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (animateExpand) {
@@ -260,6 +277,9 @@ public class Expandable extends FrameLayout {
         expandableView.setLayoutParams(expandableViewParams);
         expandIcon.setRotation(180f);
         isExpanded = true;
+        if (expandingListener != null) {
+            expandingListener.onExpanded();
+        }
     }
 
     private void expandWithAnimation() {
@@ -305,6 +325,15 @@ public class Expandable extends FrameLayout {
         set.playTogether(sizeAnimator, translateAnimator, rotationAnimator, expandAnimator);
         set.setInterpolator(new DecelerateInterpolator());
         set.setDuration(200);
+        set.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (expandingListener != null) {
+                    expandingListener.onExpanded();
+                }
+            }
+        });
 
         set.start();
         isExpanded = true;
@@ -315,6 +344,9 @@ public class Expandable extends FrameLayout {
         expandableView.setLayoutParams(expandableViewParams);
         expandIcon.setRotation(0);
         isExpanded = false;
+        if (expandingListener != null) {
+            expandingListener.onCollapsed();
+        }
     }
 
     private void collapseWithAnimation() {
@@ -360,6 +392,15 @@ public class Expandable extends FrameLayout {
         set.playTogether(sizeAnimator, translateAnimator, rotationAnimator, expandAnimator);
         set.setInterpolator(new DecelerateInterpolator());
         set.setDuration(200);
+        set.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (expandingListener != null) {
+                    expandingListener.onCollapsed();
+                }
+            }
+        });
 
         set.start();
         isExpanded = false;
@@ -413,19 +454,15 @@ public class Expandable extends FrameLayout {
         this.headerBackgroundColor = headerBackgroundColor;
     }
 
-    public float getCornerRadius() {
-        return cornerRadius;
-    }
-
-    public void setCornerRadius(float cornerRadius) {
-        this.cornerRadius = cornerRadius;
-    }
-
     public void setExpandIndicatorDrawable(Drawable expandIndicator) {
         this.expandIndicator = expandIndicator;
     }
 
     public void setExpandIndicator(@DrawableRes int expandIndicatorRes) {
         expandIndicator = ContextCompat.getDrawable(getContext(), expandIndicatorRes);
+    }
+
+    public void setExpandingListener(ExpandingListener expandingListener) {
+        this.expandingListener = expandingListener;
     }
 }
