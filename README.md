@@ -2,7 +2,7 @@
 
 Expansion panels contain creation flows and allow lightweight editing of an element.
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Expansion%20Panel-yellowgreen.svg?style=flat-square)](https://android-arsenal.com/details/1/6433)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Expansion%20Panel-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6433) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14)
 
 ## Setup
 
