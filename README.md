@@ -11,7 +11,7 @@ Expansion panels contain creation flows and allow lightweight editing of an elem
 Add following line of code to your module(app) level gradle file
 
 ```java
-    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:1.2.0'
+    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.7'
 ```
 
 #### Maven:
@@ -20,7 +20,7 @@ Add following line of code to your module(app) level gradle file
 <dependency>
   <groupId>com.robertlevonyan.view</groupId>
   <artifactId>MaterialExpansionPanel</artifactId>
-  <version>1.2.0</version>
+  <version>2.0.7</version>
   <type>pom</type>
 </dependency>
 ```
@@ -58,16 +58,27 @@ Material Expansion Panel in action
 |`app:exp_iconStyle`             |Set style for header icon: square, circle or roundedSquare|
 |`app:exp_animateExpand`         |Animate expand of layout                                  |
 |`app:exp_backgroundColor`       |Set a custom background color for layout                  |
-|`app:exp_headerBackgroundColor` |Set a custom background color for layout header           |
 |`app:exp_expandIndicator`       |Select custom drawable for expand indicator               |
 
 ### Setting Listeners
 
-```java
-    Expandable expandable = findViewById(R.id.expandable);
+```kotlin
+    val expandable = findViewById(R.id.expandable);
 ```
 
 Set expand listener
+#### Kotlin
+```kotlin
+    expandable.doOnExpand {
+        //some stuff on expand
+    }
+
+    expandable.doOnCollapse {
+        //some stuff on collapse
+    }
+```
+
+#### Java
 ```java
     expandable.setExpandingListener(new ExpandingListener() {
             @Override
@@ -82,34 +93,23 @@ Set expand listener
         });
 ```
 
-### Customizing Expandable from Java
+### Customizing Expandable from code
 
 ```java
-    expandable.setIcon(); // Icon for Expandable Header
-    expandable.setIconStyle(); // Set style for header icon: square, circle or roundedSquare
-    expandable.setAnimateExpand(); // Animate layout expanding
-    expandable.changeBackgroundColor(); // Set a custom background color for layout
-    expandable.setHeaderBackgroundColor(); // Set a custom background color for layout header
-    expandable.setExpandIndicatorDrawable(); // Select custom drawable for expand indicator
-    expandable.setExpandIndicator(); // Select custom drawable resource for expand indicator
-```
-
-### Usage in RecyclerView
-
-Inside onBindViewHolder() add this after getting the instance of Expandable
-```java
-    expandable.requestLayout();
-```
-
-Add code below to your Adapter class
-```java
-    @Override
-    public int getItemViewType(int position) {
-        return position;
-    }
+    expandable.icon = myIconDrawable // Icon for Expandable Header
+    expandable.iconStyle = ExpandableIconStyles.SQUARE // Set style for header icon: square, circle or roundedSquare
+    expandable.animateExpand = true // Animate layout expanding
+    expandable.backgroundColor = myBackgroundColor // Set a custom background color for layout
+    expandable.expandIndicator = myExpandDrawable // Select custom drawable for expand indicator
 ```
 
 ## Versions
+
+#### 2.0.1 - 2.0.7
+Several bug fixes
+
+### 2.0.0
+New version of the library. Fully rewritten with Kotlin and AndroidX ready 🤩
 
 #### 1.2.0
 
@@ -119,7 +119,7 @@ RecyclerView issue fixed
 
 New version with bug fixes
 
-#### 1.0.0
+### 1.0.0
 
 First version of library
 
