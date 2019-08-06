@@ -1,6 +1,7 @@
 # Material Expansion Panel
 
-Expansion panels contain creation flows and allow lightweight editing of an element.
+|Expansion panels contain creation flows and allow lightweight editing of an element.|<img src="https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expandable.png"  width="500" />|
+|----------------------------------------------------------------------------------------------|-----------|
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Expansion%20Panel-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6433) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [ ![Download](https://api.bintray.com/packages/robertlevonyan/maven/MaterialExpansionPanel/images/download.svg) ](https://bintray.com/robertlevonyan/maven/MaterialExpansionPanel/_latestVersion)
 
