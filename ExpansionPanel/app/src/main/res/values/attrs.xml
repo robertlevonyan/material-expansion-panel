@@ -9,8 +9,6 @@
         </attr>
         <attr name="exp_animateExpand" format="boolean" />
         <attr name="exp_backgroundColor" format="color" />
-        <attr name="exp_headerBackgroundColor" format="color" />
-        <attr name="exp_cornerRadius" format="dimension" />
         <attr name="exp_expandIndicator" format="integer" />
     </declare-styleable>
 </resources>
