@@ -11,8 +11,8 @@
 
 Add following line of code to your module(app) level gradle file
 
-```java
-    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.7'
+```groovy
+    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.8'
 ```
 
 #### Maven:
@@ -21,7 +21,7 @@ Add following line of code to your module(app) level gradle file
 <dependency>
   <groupId>com.robertlevonyan.view</groupId>
   <artifactId>MaterialExpansionPanel</artifactId>
-  <version>2.0.7</version>
+  <version>2.0.8</version>
   <type>pom</type>
 </dependency>
 ```
@@ -67,7 +67,21 @@ Material Expansion Panel in action
     val expandable = findViewById(R.id.expandable);
 ```
 
+Expand/collapse programmatically
+
+#### Kotlin
+```kotlin
+    expandable.expand()
+```
+
+#### Java
+```java
+    expandable.expand();
+```
+
+
 Set expand listener
+
 #### Kotlin
 ```kotlin
     expandable.doOnExpand {
@@ -106,8 +120,8 @@ Set expand listener
 
 ## Versions
 
-#### 2.0.1 - 2.0.7
-Several bug fixes
+#### 2.0.1 - 2.0.8
+Several bug fixes and small features
 
 ### 2.0.0
 New version of the library. Fully rewritten with Kotlin and AndroidX ready 🤩
