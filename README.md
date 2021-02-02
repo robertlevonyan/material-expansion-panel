@@ -12,7 +12,7 @@
 Add following line of code to your module(app) level gradle file
 
 ```groovy
-    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.8'
+    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.9'
 ```
 
 #### Maven:
@@ -21,7 +21,7 @@ Add following line of code to your module(app) level gradle file
 <dependency>
   <groupId>com.robertlevonyan.view</groupId>
   <artifactId>MaterialExpansionPanel</artifactId>
-  <version>2.0.8</version>
+  <version>2.0.9</version>
   <type>pom</type>
 </dependency>
 ```
@@ -120,7 +120,7 @@ Set expand listener
 
 ## Versions
 
-#### 2.0.1 - 2.0.8
+#### 2.0.1 - 2.0.9
 Several bug fixes and small features
 
 ### 2.0.0
