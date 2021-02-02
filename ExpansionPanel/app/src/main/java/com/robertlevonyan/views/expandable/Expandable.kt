@@ -2,11 +2,12 @@ package com.robertlevonyan.views.expandable
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.graphics.Point
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.core.animation.doOnEnd
@@ -17,12 +18,6 @@ import com.robertlevonyan.view.expandable.ExpandableIconStyles
 import getCircleBitmap
 import getRoundedSquareBitmap
 import kotlin.properties.Delegates
-import android.view.Display
-import androidx.core.content.ContextCompat.getSystemService
-import android.view.WindowManager
-import android.R.attr.x
-import android.graphics.Point
-
 
 class Expandable : FrameLayout {
     var icon: Drawable? = null
@@ -69,12 +64,10 @@ class Expandable : FrameLayout {
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        initTypedArray(attrs)
+        attrs?.let { initTypedArray(it) } ?: initDefaultValues()
     }
 
-    private fun initTypedArray(attrs: AttributeSet?) {
-        if (attrs == null) return
-
+    private fun initTypedArray(attrs: AttributeSet) {
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.Expandable, 0, 0)
 
         icon = ta.getDrawable(R.styleable.Expandable_exp_icon)
@@ -83,10 +76,19 @@ class Expandable : FrameLayout {
         backgroundColor = ta.getColor(R.styleable.Expandable_exp_backgroundColor, ContextCompat.getColor(context, R.color.colorDefaultBackground))
         expandIndicator = ta.getDrawable(R.styleable.Expandable_exp_expandIndicator)
 
-        collapsedViewHeight = resources.getDimension(R.dimen.collapsed_size).toInt()
+        collapsedViewHeight = resources.getDimensionPixelSize(R.dimen.collapsed_size).toInt()
         setBackgroundColor(backgroundColor)
 
         ta.recycle()
+    }
+
+    private fun initDefaultValues() {
+        iconStyle = ExpandableIconStyles.SQUARE
+        animateExpand = false
+        backgroundColor = ContextCompat.getColor(context, R.color.colorDefaultBackground)
+
+        collapsedViewHeight = resources.getDimensionPixelSize(R.dimen.collapsed_size)
+        setBackgroundColor(backgroundColor)
     }
 
     override fun onFinishInflate() {
@@ -169,7 +171,7 @@ class Expandable : FrameLayout {
         if (headerLayout.indexOfChild(headerView) == -1) headerLayout.addView(headerView)
     }
 
-    private fun collapse() {
+    fun collapse() {
         if (animateExpand) {
             expandIcon.animate().rotation(0f).duration = 200
             iconImage.animate().scaleX(1f).scaleY(1f).translationX(1f).translationY(1f).duration = 200
@@ -198,7 +200,7 @@ class Expandable : FrameLayout {
         }
     }
 
-    private fun expand() {
+    fun expand() {
         createExpandableHeight()
         if (animateExpand) {
             expandIcon.animate().rotation(180f).duration = 200

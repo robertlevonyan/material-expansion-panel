@@ -1,0 +1,33 @@
+apply plugin: 'com.jfrog.bintray'
+
+version = '2.0.9'
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load( new FileInputStream("local.properties"))
+
+// Bintray
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    pkg {
+        repo = 'maven'
+        name = 'MaterialExpansionPanel'
+        configurations = ['archives']
+        desc = 'Material Expansion Panel. Expansion panels contain creation flows and allow lightweight editing of an element.'
+        websiteUrl = 'https://github.com/robertlevonyan/materialExpansionPanel'
+        vcsUrl = 'https://github.com/robertlevonyan/materialExpansionPanel.git'
+        licenses = ["Apache-2.0"]
+        publish = true
+        publicDownloadNumbers = true
+    }
+}
