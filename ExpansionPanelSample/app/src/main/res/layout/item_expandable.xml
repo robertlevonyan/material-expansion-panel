@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp">
+
+    <com.robertlevonyan.views.expandable.Expandable
+        android:id="@+id/expandable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:exp_expandIndicator="@drawable/ic_down">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_view" />
+
+        <include
+            android:id="@+id/content"
+            layout="@layout/content_view" />
+    </com.robertlevonyan.views.expandable.Expandable>
+</androidx.cardview.widget.CardView>

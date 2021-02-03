@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#f5f5f5</color>
+    <color name="colorPrimaryDark23">#f1f1f1</color>
+    <color name="colorAccent">#e7a942</color>
+    <color name="colorDark">#1a1a18</color>
+
+    <color name="colorRed1">#e57373</color>
+    <color name="colorPurple1">#BA68C8</color>
+    <color name="colorIndigo1">#7986CB</color>
+    <color name="colorBlue1">#64B5F6</color>
+    <color name="colorCyan1">#4DD0E1</color>
+    <color name="colorTeal1">#4DB6AC</color>
+    <color name="colorGreen1">#AED581</color>
+    <color name="colorLime1">#DCE775</color>
+    <color name="colorAmber1">#FFD54F</color>
+    <color name="colorOrange1">#FFB74D</color>
+    <color name="colorBrown1">#A1887F</color>
+
+    <color name="colorRed2">#d32f2f</color>
+    <color name="colorPurple2">#7B1FA2</color>
+    <color name="colorIndigo2">#303F9F</color>
+    <color name="colorBlue2">#1976D2</color>
+    <color name="colorCyan2">#0097A7</color>
+    <color name="colorTeal2">#00796B</color>
+    <color name="colorGreen2">#689F38</color>
+    <color name="colorLime2">#AFB42B</color>
+    <color name="colorAmber2">#FFA000</color>
+    <color name="colorOrange2">#F57C00</color>
+    <color name="colorBrown2">#5D4037</color>
+</resources>
