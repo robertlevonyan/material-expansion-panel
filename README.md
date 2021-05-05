@@ -3,9 +3,16 @@
 |Expansion panels contain creation flows and allow lightweight editing of an element.|<img src="https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expandable.png"  width="500" />|
 |----------------------------------------------------------------------------------------------|-----------|
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Expansion%20Panel-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6433) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [ ![Download](https://api.bintray.com/packages/robertlevonyan/maven/MaterialExpansionPanel/images/download.svg) ](https://bintray.com/robertlevonyan/maven/MaterialExpansionPanel/_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Expansion%20Panel-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6433) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.robertlevonyan.view/MaterialExpansionPanel/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.robertlevonyan.view/MaterialExpansionPanel)
 
 ## Setup
+
+Add following line of code to your project level gradle file
+
+```kotlin
+  repositories {
+    mavenCentral()
+  }
 
 #### Gradle:
 
@@ -13,6 +20,12 @@ Add following line of code to your module(app) level gradle file
 
 ```groovy
     implementation 'com.robertlevonyan.view:MaterialExpansionPanel:<LATEST_VERSION>'
+```
+
+#### Kotlin:
+
+```kotlin
+    implementation("com.robertlevonyan.view:MaterialExpansionPanel:$LATEST_VERSION")
 ```
 
 #### Maven:
@@ -119,6 +132,10 @@ Set expand listener
 ```
 
 ## Versions
+
+#### 2.1.0
+
+Migration to mavenCentral
 
 #### 2.0.1 - 2.0.10
 Several bug fixes and small features

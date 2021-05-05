@@ -1,6 +1,8 @@
 package com.robertlevonyan.views.expandablesample;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -20,9 +22,9 @@ import java.util.ArrayList;
  */
 
 public class ExpandableAdapter extends RecyclerView.Adapter<ExpandableViewHolder> {
-    private Context context;
-    private ArrayList<ExpandableModel> models;
-    private ArrayList<Pair<Integer, Integer>> colors;
+    private final Context context;
+    private final ArrayList<ExpandableModel> models;
+    private final ArrayList<Pair<Integer, Integer>> colors;
 
     public ExpandableAdapter(Context context, ArrayList<ExpandableModel> models, ArrayList<Pair<Integer, Integer>>  colors) {
         this.context = context;
@@ -31,7 +33,7 @@ public class ExpandableAdapter extends RecyclerView.Adapter<ExpandableViewHolder
     }
 
     @Override
-    public ExpandableViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ExpandableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.item_expandable, parent, false);
         return new ExpandableViewHolder(v);
     }
