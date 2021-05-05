@@ -32,6 +32,7 @@ public class ExpandableAdapter extends RecyclerView.Adapter<ExpandableViewHolder
         this.colors = colors;
     }
 
+    @NonNull
     @Override
     public ExpandableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.item_expandable, parent, false);

@@ -13,6 +13,7 @@ Add following line of code to your project level gradle file
   repositories {
     mavenCentral()
   }
+```
 
 #### Gradle:
 
