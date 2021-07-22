@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Expandable</string>
+    <string name="app_name">Material Expansion Panel</string>
 
     <string-array name="headers">
         <item>10% Happier</item>

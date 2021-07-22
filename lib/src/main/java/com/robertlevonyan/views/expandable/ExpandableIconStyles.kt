@@ -1,15 +1,15 @@
-package com.robertlevonyan.view.expandable
+package com.robertlevonyan.views.expandable
 
 enum class ExpandableIconStyles {
-    SQUARE, CIRCLE, ROUNDED_SQUARE;
+  SQUARE, CIRCLE, ROUNDED_SQUARE;
 
-    companion object {
-        fun getByIndex(index: Int): ExpandableIconStyles {
-            return when (index) {
-                CIRCLE.ordinal -> CIRCLE
-                ROUNDED_SQUARE.ordinal -> ROUNDED_SQUARE
-                else -> SQUARE
-            }
-        }
+  companion object {
+    fun getByIndex(index: Int): ExpandableIconStyles {
+      return when (index) {
+        CIRCLE.ordinal -> CIRCLE
+        ROUNDED_SQUARE.ordinal -> ROUNDED_SQUARE
+        else -> SQUARE
+      }
     }
+  }
 }

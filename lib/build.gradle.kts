@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-  compileSdkVersion(30)
+  compileSdkVersion(31)
   defaultConfig {
     minSdkVersion(16)
-    targetSdkVersion(30)
+    targetSdkVersion(31)
     versionCode = 1
     versionName = "1.0"
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
@@ -39,7 +39,7 @@ allprojects {
 
 dependencies {
   implementation(kotlin("stdlib"))
-  implementation("androidx.appcompat:appcompat:1.2.0")
+  implementation("androidx.appcompat:appcompat:1.3.0")
   implementation("androidx.vectordrawable:vectordrawable:1.1.0")
-  implementation("androidx.core:core-ktx:1.3.2")
+  implementation("androidx.core:core-ktx:1.6.0")
 }
