@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-  compileSdkVersion(31)
+  compileSdk = 31
   defaultConfig {
     applicationId = "com.robertlevonyan.views.expandablesample"
-    minSdkVersion(16)
-    targetSdkVersion(31)
+    minSdk = 16
+    targetSdk = 31
     versionCode = 1
     versionName = "1.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -26,9 +26,9 @@ android {
 }
 
 dependencies {
-  implementation("androidx.appcompat:appcompat:1.3.0")
+  implementation("androidx.appcompat:appcompat:1.3.1")
   implementation("androidx.recyclerview:recyclerview:1.2.1")
   implementation("androidx.constraintlayout:constraintlayout:2.0.4")
   implementation("androidx.cardview:cardview:1.0.0")
-  implementation("com.robertlevonyan.view:MaterialExpansionPanel:2.1.1")
+  implementation("com.robertlevonyan.view:MaterialExpansionPanel:2.1.2")
 }

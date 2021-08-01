@@ -41,7 +41,7 @@ public class ExpandableAdapter extends RecyclerView.Adapter<ExpandableViewHolder
 
     @Override
     public void onBindViewHolder(ExpandableViewHolder holder, int position) {
-        ExpandableModel expandableModel = models.get(holder.getAdapterPosition());
+        ExpandableModel expandableModel = models.get(holder.getAbsoluteAdapterPosition());
         Expandable expandable = holder.getExpandable();
         LinearLayout header = holder.getHeader();
         FrameLayout content = holder.getContent();
@@ -49,7 +49,7 @@ public class ExpandableAdapter extends RecyclerView.Adapter<ExpandableViewHolder
         TextView headerSubText = holder.getHeaderSubText();
         TextView contentText = holder.getContentText();
 
-        Pair<Integer, Integer> color = colors.get(holder.getAdapterPosition());
+        Pair<Integer, Integer> color = colors.get(holder.getAbsoluteAdapterPosition());
 
         expandable.setExpandingListener(new Expandable.ExpandingListener() {
             @Override
