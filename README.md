@@ -134,9 +134,11 @@ Set expand listener
 
 ## Versions
 
-### 2.1.1
+### 2.1.1 - 2.1.3
 
+Update to Java 11
 SDK 31 ready
+Minor updates
 
 #### 2.1.0
 

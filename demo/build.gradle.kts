@@ -20,8 +20,8 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
   }
 }
 
@@ -30,5 +30,5 @@ dependencies {
   implementation("androidx.recyclerview:recyclerview:1.2.1")
   implementation("androidx.constraintlayout:constraintlayout:2.0.4")
   implementation("androidx.cardview:cardview:1.0.0")
-  implementation("com.robertlevonyan.view:MaterialExpansionPanel:2.1.2")
+  implementation("com.robertlevonyan.view:MaterialExpansionPanel:2.1.3")
 }
