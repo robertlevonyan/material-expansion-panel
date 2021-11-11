@@ -1,6 +1,6 @@
 # Material Expansion Panel
 
-|Expansion panels contain creation flows and allow lightweight editing of an element.|<img src="https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expandable.png"  width="500" />|
+|Expansion panels contain creation flows and allow lightweight editing of an element.|<img src="https://github.com/robertlevonyan/material-expansion-panel/blob/master/Images/expandable.png"  width="500" />|
 |----------------------------------------------------------------------------------------------|-----------|
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Expansion%20Panel-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6433) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.robertlevonyan.view/MaterialExpansionPanel/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.robertlevonyan.view/MaterialExpansionPanel)
@@ -58,12 +58,12 @@ Add following line of code to your module(app) level gradle file
 </com.robertlevonyan.views.expandable.Expandable>
 ```
 
-|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/collapsed.jpg)|![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/expanded.jpg)|
+|![alt text](https://github.com/robertlevonyan/material-expansion-panel/blob/master/Images/collapsed.jpg)|![alt text](https://github.com/robertlevonyan/material-expansion-panel/blob/master/Images/expanded.jpg)|
 |----------------------------------------------------------------------------------------------|-----------|
 
 Material Expansion Panel in action
 
-![alt text](https://github.com/robertlevonyan/materialExpansionPanel/blob/master/Images/process.gif)
+![alt text](https://github.com/robertlevonyan/material-expansion-panel/blob/master/Images/process.gif)
 
 ### Attributes
 
@@ -170,6 +170,10 @@ First version of library
 - **Twitter**: https://twitter.com/@RobertLevonyan
 - **Facebook**: https://facebook.com/robert.levonyan
 - **Google Play**: https://play.google.com/store/apps/dev?id=5477562049350283357
+
+<a href="https://www.buymeacoffee.com/robertlevonyan">
+  <img src="https://github.com/robertlevonyan/material-expansion-panel/blob/master/Images/coffee.jpeg"  width="300" />
+</a>
 
 ## Licence
 
