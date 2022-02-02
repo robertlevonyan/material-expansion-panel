@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-  compileSdk = 31
+  compileSdk = 32
   defaultConfig {
     minSdk = 16
-    targetSdk = 31
+    targetSdk = 32
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     vectorDrawables.useSupportLibrary = true
   }
@@ -37,7 +37,7 @@ allprojects {
 
 dependencies {
   implementation(kotlin("stdlib"))
-  implementation("androidx.appcompat:appcompat:1.3.1")
+  implementation("androidx.appcompat:appcompat:1.4.1")
   implementation("androidx.vectordrawable:vectordrawable:1.1.0")
-  implementation("androidx.core:core-ktx:1.6.0")
+  implementation("androidx.core:core-ktx:1.7.0")
 }
